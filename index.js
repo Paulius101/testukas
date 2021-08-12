@@ -31,3 +31,19 @@ const data = [
 
 // Isspausdinti mokinio varda, jei jis neturi pazymio 7
 
+let lowest = [];
+for (let i = 0; i < data.length; i++) {
+    if (Math.min(...data[i++].marks) <= Math.min(...data[i].marks)) {
+        lowest.push(data[--i].name + ' ' + Math.min(...data[i++].marks));
+    }
+}
+console.log(lowest);
+
+let highest = [];
+for (let u = 0; u < data.length; u++) {
+    if (Math.max(...data[u++].marks) >= Math.max(...data[u].marks)) {
+        highest.push(data[--u].name + ' ' + Math.max(...data[u++].marks));
+    }
+}
+console.log(highest);
+
